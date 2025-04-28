@@ -1,20 +1,132 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dev Assist</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos básicos */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Menu hambúrguer */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle span {
+            background: white;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        nav {
+            display: flex;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            nav ul {
+                display: none;
+                flex-direction: column;
+                background-color: #333;
+                position: absolute;
+                top: 60px;
+                right: 20px;
+                width: 200px;
+                border-radius: 5px;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <header>
-
+        <h1>Dev Assist</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Sobre</a></li>
+                <li><a href="#contact">Contato</a></li>
+            </ul>
+        </nav>
     </header>
     <main>
+        <section id="home">
+            <h2>Bem-vindo à Home</h2>
+            <p>Conteúdo da seção Home.</p>
+        </section>
 
+        <section id="about">
+            <h2>Sobre</h2>
+            <p>Informações sobre o Dev Assist.</p>
+        </section>
+
+        <section id="contact">
+            <h2>Contato</h2>
+            <p>Informações de contato.</p>
+        </section>
     </main>
     <footer>
-
+        <p>© 2025 Dev Assist. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav ul');
+            nav.classList.toggle('active');
+        }
+    </script>
 </body>
+
 </html>

@@ -93,6 +93,10 @@ header {
     color: var(--color3);
     font-size: 1.2rem;
 }
+.header__bottom ul li a:hover{
+    color: var(--color1);
+    transition: 0.3s;
+}
 
 /* -- /HEADER -- */
 
